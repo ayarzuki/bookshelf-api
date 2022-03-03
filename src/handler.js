@@ -5,7 +5,7 @@
 import { nanoid } from 'nanoid';
 import books from './books.js';
 
-// Add Book
+// Adding a book
 export const addBookHandler = (request, h) => {
 	// Request body property
 	const {
@@ -20,7 +20,7 @@ export const addBookHandler = (request, h) => {
 	} = request.payload;
 
 	// Auto generate id and date
-	const id = nanoid(16);
+	const id = nanoid(18);
 	const insertedAt = new Date().toISOString();
 	const updatedAt = insertedAt;
 
@@ -48,7 +48,7 @@ export const addBookHandler = (request, h) => {
 		updatedAt,
 	};
 
-	// Response if new book doesn't have a name, readPage > pageCount, or with completed data
+	// Response if new book doesn't have a name, the readPage > pageCount, and with completed data
 	if (newBook.name === undefined) {
 		const response = h.response({
 			status: 'fail',
@@ -65,7 +65,7 @@ export const addBookHandler = (request, h) => {
 		response.code(400);
 		return response;
 	} else {
-		// Add new book to books array
+		// Adding new book to books array
 		books.push(newBook);
 
 		// Check if new book is successfully added
@@ -85,7 +85,7 @@ export const addBookHandler = (request, h) => {
 		}
 	}
 
-	// Response if generic error happens
+	// Response if generic error happens and status code will be 500
 	const response = h.response({
 		status: 'fail',
 		message: 'Buku gagal ditambahkan',
@@ -94,7 +94,7 @@ export const addBookHandler = (request, h) => {
 	return response;
 };
 
-// Get All Books
+// Geting All Books
 export const getAllBooksHandler = (request, h) => {
 	const { name, reading, finished } = request.query;
 
@@ -136,7 +136,7 @@ export const getAllBooksHandler = (request, h) => {
 	};
 };
 
-// Get Specific Book by id
+// Get Specific Book by an id
 export const getBookByIdHandler = (request, h) => {
 	// Request params with book id
 	const { id } = request.params;
@@ -249,7 +249,7 @@ export const editBookByIdHandler = (request, h) => {
 	return response;
 };
 
-// Delete book with specified id
+// Deleting book with specified id
 export const deleteBookByIdHandler = (request, h) => {
 	// Request params with book id to delete
 	const { id } = request.params;
@@ -257,7 +257,7 @@ export const deleteBookByIdHandler = (request, h) => {
 	// Find book index with specified id
 	const index = books.findIndex(book => book.id === id);
 
-	// Delete book
+	// Delete a book
 	if (index !== -1) {
 		books.splice(index, 1);
 		const response = h.response({
