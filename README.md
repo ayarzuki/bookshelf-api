@@ -6,8 +6,8 @@ This project is to completing Dicoding Indonesia's Certification of 'Belajar Bac
 
 # Functions
 
-1. Create a new book
-2. Read all books
-3. Read detail of a book
-4. Update a specific book
-5. Delete a specific book
+1. Creating a new book data
+2. Reading all books
+3. Reading detail of a book
+4. Updating a specific book
+5. Deleting a specific book
