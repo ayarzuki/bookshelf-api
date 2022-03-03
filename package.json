@@ -1,0 +1,32 @@
+{
+	"name": "bookshelf-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./server.js",
+	"type": "module",
+	"scripts": {
+		"start": "nodemon ./src/server.js",
+		"lint": "eslint ./src",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ayarzuki/bookshelf-api"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ayarzuki/bookshelf-api/issues"
+	},
+	"homepage": "https://github.com/ayarzuki/bookshelf-api/blob/main/README.md",
+	"devDependencies": {
+		"eslint": "^7.32.0",
+		"eslint-config-google": "^0.14.0",
+		"nodemon": "^2.0.12"
+	},
+	"dependencies": {
+		"@hapi/hapi": "^20.1.5",
+		"nanoid": "^3.1.25"
+	}
+}
